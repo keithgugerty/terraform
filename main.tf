@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "docker" {
-  host = "host.docker.internal"
+  host = "http://host.docker.internal:8000"
 }
 
 resource "docker_image" "nginx" {
