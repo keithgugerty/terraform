@@ -7,7 +7,9 @@ terraform {
   }
 }
 
-provider "docker" {}
+provider "docker" {
+  host = "host.docker.internal"
+}
 
 resource "docker_image" "nginx" {
   name         = "nginx"
