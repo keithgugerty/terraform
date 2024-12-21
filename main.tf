@@ -26,7 +26,7 @@ resource "docker_container" "nginx" {
   }
 }
 
-output "ip" {
+/*output "ip" {
   value       = "${docker_container.container_id.ip_address}"
   description = "The IP for the container."
 }
@@ -34,5 +34,5 @@ output "ip" {
 output "container_name" {
   value       = "${docker_container.container_id.name}"
   description = "The name of the container."
-}
+}*/
 
