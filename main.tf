@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "docker" {
-  //host = "unix:////users/keithgugerty/.docker/run/docker.sock"
+  host = "unix:///Users/keithgugerty/.docker/run/docker.sock"
 }
 
 resource "docker_image" "nginx" {
@@ -24,5 +24,15 @@ resource "docker_container" "nginx" {
     internal = 80
     external = 8000
   }
+}
+
+output "ip" {
+  value       = "${docker_container.container_id.ip_address}"
+  description = "The IP for the container."
+}
+
+output "container_name" {
+  value       = "${docker_container.container_id.name}"
+  description = "The name of the container."
 }
 
